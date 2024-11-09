@@ -14,14 +14,13 @@ RunLab4 функция() {
 	TaskB(Дополнительные значения)
 }
 
-функцияA задачаA(XnXn, Xk, deltaX float64) {
+func taskA(Xn, Xk, deltaX float64) {
 	fmt.Println("Значения Y для диапазона:")
-	дляXn x := Xn; x <= Xk; x += deltaX {
-		y := y(x)
-		fmt.Printf("x = %.2f, Y = %.4f4f\n", x, y)
+	for x := Xn; x <= Xk; x += deltaX {
+		y := calculateY(x)
+		fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 	}
 }
-
 задачаB функция(значения []float64) {
 	fmt.Println("\nЗначения Y для дополнительных значений:")
 	_ для, x := диапазон значений {
