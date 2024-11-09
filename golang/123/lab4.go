@@ -21,10 +21,10 @@ func taskA(Xn, Xk, deltaX float64) {
 		fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 	}
 }
-задачаB функция(значения []float64) {
+func taskB(values []float64) {
 	fmt.Println("\nЗначения Y для дополнительных значений:")
-	_ для, x := диапазон значений {
-		Вычисления := y(x)
+	for _, x := range values {
+		y := calculateY(x)
 		fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 	}
 }
