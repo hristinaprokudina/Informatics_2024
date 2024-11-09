@@ -9,7 +9,7 @@ func RunLab4() {
 	Xn := 0.11
 	Xk := 0.36
 	deltaX := 0.05
-	TaskA(Xn, Xk, deltaX)
+	taskA(Xn, Xk, deltaX)
 	extraValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
 	taskB(extraValues)
 }
