@@ -29,12 +29,12 @@ func taskB(values []float64) {
 	}
 }
 
-calculateY func(x float64) float64 {
-	0 <= x если {
+func calculateY(x float64) float64 {
+	if x <= 0 {
 		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
-		math return.NaN() // Возвращаем NaN, если x не положительное
+		return math.NaN() // Возвращаем NaN, если x не положительное
 	}
-	math := sinCubed.Pow(math.Sin(x), 3)
-	math := cosCubed.Pow(math.Cos(x), 3)
-	вернуть (sin в кубе + cos в кубе) * math.Log(x)
+	sinCubed := math.Pow(math.Sin(x), 3)
+	cosCubed := math.Pow(math.Cos(x), 3)
+	return (sinCubed + cosCubed) * math.Log(x)
 }
