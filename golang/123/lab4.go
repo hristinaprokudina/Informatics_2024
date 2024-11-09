@@ -1,8 +1,8 @@
-пакет Lab4
+package Lab4
 
-импорт (
-	"fmt"fmt"
-	"математика"
+import (
+	"fmt"
+	"math"
 )
 
 RunLab4 функция() {
