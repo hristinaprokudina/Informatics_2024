@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-RunLab4 функция() {
+func RunLab4() {
 	Xn := 0.11
 	Xk := 0.36
 	deltaX := 0.05
