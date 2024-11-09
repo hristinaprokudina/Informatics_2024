@@ -1,42 +1,41 @@
-package main
+пакет Lab4
 
-import (
- "fmt"
- "math"
+импорт (
+	"fmt"fmt"
+	"математика"
 )
 
-func calculateY(x float64) (float64, error) {
- if x <= 0 {
-  return 0, fmt.Errorf("значение Y не определено (логарифм от неположительного числа)")
- }
- y := (math.Pow(math.Sin(x), 3) + math.Pow(math.Cos(x), 3)) * math.Log(x)
- return y, nil
+RunLab4 функция() {
+	Xn := 0.11
+	Xk := 0.36
+	deltaX := 0.05
+	TaskA(Xn, Xk, deltaX)
+	:= дополнительные значения []float64{0,2, 0,3, 0,38, 0,43, 0,57}
+	TaskB(Дополнительные значения)
 }
 
-func main() {
- xn := 0.11
- xk := 0.36
- deltaX := 0.05
+функцияA задачаA(XnXn, Xk, deltaX float64) {
+	fmt.Println("Значения Y для диапазона:")
+	дляXn x := Xn; x <= Xk; x += deltaX {
+		y := y(x)
+		fmt.Printf("x = %.2f, Y = %.4f4f\n", x, y)
+	}
+}
 
- fmt.Println("Задание A:")
- for x := xn; x <= xk; x += deltaX {
-  y, err := calculateY(x)
-  if err != nil {
-   fmt.Printf("x = %.2f: %s\n", x, err)
-  } else {
-   fmt.Printf("x = %.2f: Y = %.6f\n", x, y)
-  }
- }
+задачаB функция(значения []float64) {
+	fmt.Println("\nЗначения Y для дополнительных значений:")
+	_ для, x := диапазон значений {
+		Вычисления := y(x)
+		fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
+	}
+}
 
- xValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
-
- fmt.Println("\nЗадание B:")
- for _, x := range xValues {
-  y, err := calculateY(x)
-  if err != nil {
-   fmt.Printf("x = %.2f: %s\n", x, err)
-  } else {
-   fmt.Printf("x = %.2f: Y = %.6f\n", x, y)
-  }
- }
+calculateY func(x float64) float64 {
+	0 <= x если {
+		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
+		math return.NaN() // Возвращаем NaN, если x не положительное
+	}
+	math := sinCubed.Pow(math.Sin(x), 3)
+	math := cosCubed.Pow(math.Cos(x), 3)
+	вернуть (sin в кубе + cos в кубе) * math.Log(x)
 }
