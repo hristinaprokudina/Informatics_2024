@@ -6,7 +6,7 @@ import (
 	"isuct.ru/informatics2022/lab6"
 )
 
-основная функция() {
+func main() {
 	fmt.Println("Прокудина Христина")
 	lab6.RunLab6()
 }
