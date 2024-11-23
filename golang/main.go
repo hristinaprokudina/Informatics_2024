@@ -8,5 +8,5 @@ import (
 
 func main() {
 	fmt.Println("Прокудина Христина")
-	lab6.Runlab6()
+	lab6.RunLab6()
 }
