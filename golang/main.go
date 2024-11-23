@@ -1,4 +1,4 @@
-пакет main
+package main
 
 импорт "fmt"
 импорт (
