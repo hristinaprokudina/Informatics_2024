@@ -1,12 +1,13 @@
-package main
+пакет main
 
-import (
+импорт "fmt"
+импорт (
 	"fmt"
-	
+
 	"isuct.ru/informatics2022/lab6"
 )
 
-func main() {
+основная функция() {
 	fmt.Println("Прокудина Христина")
 	lab6.RunLab6()
 }
