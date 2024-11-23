@@ -1,7 +1,6 @@
 package main
 
-импорт "fmt"
-импорт (
+import (
 	"fmt"
 
 	"isuct.ru/informatics2022/lab6"
