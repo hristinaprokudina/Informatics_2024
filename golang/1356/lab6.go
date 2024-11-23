@@ -27,7 +27,7 @@ func (p *Pistol) Info() {
 	fmt.Printf("Модель: %s, Калибр: %.2f, Патроны: %d\n", p.Model, p.Caliber, p.Ammo)
 }
 
-func Runlab6() {	
+func RunLab6() {	
 	myPistol := Pistol{
 		Model:   "TT",
 		Caliber: 9.0,
