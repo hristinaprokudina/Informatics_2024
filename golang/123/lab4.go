@@ -6,12 +6,9 @@ import (
 )
 
 func RunLab4() {
-	Xn := 0.11
-	Xk := 0.36
-	deltaX := 0.05
-	taskA(Xn, Xk, deltaX)
+	fmt.Println(TaskA(0.11, 0.36, 0.05))
 	extraValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
-	taskB(extraValues)
+	fmt.Println(taskB(extraValues))
 }
 
 func taskA(Xn, Xk, deltaX float64) []float64 {
