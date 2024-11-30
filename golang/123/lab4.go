@@ -14,14 +14,14 @@ func RunLab4() {
 	taskB(extraValues)
 }
 
-func taskA(Xn, Xk, deltaX float64) float64 {
+func taskA(Xn, Xk, deltaX float64) []float64 {
 	fmt.Println("Значения Y для диапазона:")
 	for x := Xn; x <= Xk; x += deltaX {
 		y := calculateY(x)
 		fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 	}
 }
-func taskB(values []float64) float64 {
+func taskB(values []float64) []float64 {
 	fmt.Println("\nЗначения Y для дополнительных значений:")
 	for _, x := range values {
 		y := calculateY(x)
