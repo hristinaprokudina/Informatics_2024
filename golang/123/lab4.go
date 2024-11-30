@@ -13,7 +13,7 @@ func RunLab4() {
 	extraValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
 	taskB(extraValues)
 }
-func taskA(Xn, Xk, deltaX float64) []float64 {
+func taskA(Xn float64, Xk float64, deltaX float64) []float64 {
 	fmt.Println("Значения Y для диапазона:")
 	for x := Xn; x <= Xk; x += deltaX {
 		y := calculateY(x)
