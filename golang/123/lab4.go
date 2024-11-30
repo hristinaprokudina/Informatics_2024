@@ -4,7 +4,10 @@ import (
 	"fmt"
 	"math"
 )
-
+type Result struct {
+	X float64
+	Y float64
+}
 func RunLab4() {
 	Xn := 0.11
 	Xk := 0.36
