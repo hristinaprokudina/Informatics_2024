@@ -14,14 +14,14 @@ func RunLab4() {
 	taskB(extraValues)
 }
 
-func taskA(Xn, Xk, deltaX float64) {
+func taskA(Xn, Xk, deltaX float64) [] float64 {
 	fmt.Println("Значения Y для диапазона:")
 	for x := Xn; x <= Xk; x += deltaX {
 		y := calculateY(x)
 		fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 	}
 }
-func taskB(values []float64) {
+func taskB(values []float64, float64) []float64 {
 	fmt.Println("\nЗначения Y для дополнительных значений:")
 	for _, x := range values {
 		y := calculateY(x)
@@ -32,7 +32,7 @@ func taskB(values []float64) {
 func calculateY(x float64) float64 {
 	if x <= 0 {
 		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
-		return math.NaN() // Возвращаем NaN, если x не положительное
+		return math.NaN()
 	}
 	sinCubed := math.Pow(math.Sin(x), 3)
 	cosCubed := math.Pow(math.Cos(x), 3)
