@@ -10,5 +10,4 @@ func main() {
 	fmt.Println("Прокудина Христина")
 	lab6.RunLab6()
 	lab7.Runlab7()
-
 }
