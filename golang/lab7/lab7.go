@@ -1,4 +1,4 @@
-package main
+package lab7
 
 import (
 	"fmt"
@@ -48,7 +48,7 @@ func NewItem(name string, price float64, discount float64) *Item {
 	return item
 }
 
-func main() {
+func Runlab7() {
 	products := []Product{
 		NewItem("принтер", 5000.0, 0.1), // 10% скидка
 		NewItem("ноутбук", 40000.0, 0.15), // 15% скидка
