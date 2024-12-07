@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func RunLab8() {
+func RunLab8A() {
 	file, err := os.Open("input.txt")
 	if err != nil {
 		fmt.Println("Ошибка при открытии файла:", err)
@@ -50,7 +50,7 @@ func RunLab8() {
 	printResults("Значения Y для дополнительных значений:", resultsB) 
 }
 
-func taskA(Xn float64, Xk float64, deltaX float64) {
+func taskAA(Xn float64, Xk float64, deltaX float64) {
 	fmt.Println("Значения Y для диапазона:")
 	for x := Xn; x <= Xk; x += deltaX {
 		y := calculateY(x)
@@ -60,7 +60,7 @@ func taskA(Xn float64, Xk float64, deltaX float64) {
 	}
 }
 
-func taskB(values []float64) []float64 {
+func taskBA(values []float64) []float64 {
 	var results []float64
 	for _, x := range values {
 		y := calculateY(x)
@@ -81,7 +81,7 @@ func calculateYA(x float64) float64 {
 	return (sinCubed + cosCubed) * math.Log(x)
 }
 
-func printResults(header string, results []float64) {
+func printResultsA(header string, results []float64) {
 	fmt.Println(header)
 	for i, y := range results {
 		fmt.Printf("x = %.2f, Y = %.4f\n", 0.2+float64(i)*0.1, y)
