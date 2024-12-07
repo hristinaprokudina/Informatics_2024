@@ -20,11 +20,13 @@ func RunLab4() {
 
 func taskA(Xn float64, Xk float64, deltaX float64) []float64 {
 	var results []float64
+	var xValues []float64
 
 	for x := Xn; x <= Xk; x += deltaX {
 		y := calculateY(x)
 		if !math.IsNaN(y) {
 			results = append(results, y)
+			xValues = append(xValues, x)
 		}
 	}
 	return results
@@ -53,7 +55,7 @@ func calculateY(x float64) float64 {
 
 func printResults(header string, results []float64) {
 	fmt.Println(header)
-	for y := range results {
+	for i, y := range results {
 		fmt.Printf("Y = %.4f\n", y)
 	}
 }
