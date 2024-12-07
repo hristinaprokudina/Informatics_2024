@@ -9,9 +9,9 @@ func RunLab4() {
 	Xn := 0.11
 	Xk := 0.36
 	deltaX := 0.05
-	taskA(Xn, Xk, deltaX)
+	resultsA := taskA(Xn, Xk, deltaX)
+	printResults("Значения Y для диапазона:", resultsA)
 	extraValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
-	taskB(extraValues)
 	resultsB := taskB(extraValues)
 	printResults("Значения Y для дополнительных значений:", resultsB)
 }
@@ -23,6 +23,7 @@ func taskA(Xn float64, Xk float64, deltaX float64) {
 			fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 		}
 	}
+	return results
 }
 
 func taskB(values []float64) []float64 {
@@ -35,6 +36,7 @@ func taskB(values []float64) []float64 {
 	}
 	return results
 }
+
 func calculateY(x float64) float64 {
 	if x <= 0 {
 		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
