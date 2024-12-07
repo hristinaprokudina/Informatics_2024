@@ -46,7 +46,7 @@ func RunLab8A() {
 
 	deltaX := 0.05 
 	taskAA(a, b, deltaX) 
-	resultsB := taskB(xValues) 
+	resultsB := taskBA(xValues) 
 	printResults("Значения Y для дополнительных значений:", resultsB) 
 }
 
@@ -60,7 +60,7 @@ func taskAA(Xn float64, Xk float64, deltaX float64) {
 	}
 }
 
-func taskB(values []float64) []float64 {
+func taskBA(values []float64) []float64 {
 	var results []float64
 	for _, x := range values {
 		y := calculateY(x)
