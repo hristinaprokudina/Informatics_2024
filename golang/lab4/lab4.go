@@ -10,15 +10,15 @@ func RunLab4() {
 	Xk := 0.36
 	deltaX := 0.05
 
-	resultsA := taskA(Xn, Xk, deltaX)
-	printResults("Значения Y для диапазона:", resultsA)
+	resultsA, xValuesA := taskA(Xn, Xk, deltaX)
+	printResults("Значения Y для диапазона:", xValuesA, resultsA)
 
 	extraValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
 	resultsB := taskB(extraValues)
-	printResults("Значения Y для дополнительных значений:", resultsB)
+	printResults("Значения Y для дополнительных значений:", extraValues, resultsB)
 }
 
-func taskA(Xn float64, Xk float64, deltaX float64) []float64 {
+func taskA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
 	var results []float64
 	var xValues []float64 
 
@@ -29,7 +29,7 @@ func taskA(Xn float64, Xk float64, deltaX float64) []float64 {
 			xValues = append(xValues, x) 
 		}
 	}
-	return results
+	return results, xValues 
 }
 
 func taskB(values []float64) []float64 {
@@ -53,9 +53,13 @@ func calculateY(x float64) float64 {
 	return (sinCubed + cosCubed) * math.Log(x)
 }
 
-func printResults(header string, results []float64) {
+func printResults(header string, xValues []float64, results []float64) {
 	fmt.Println(header)
-	for y := range results {
-		fmt.Printf("Y = %.4f\n", y)
+	for i, y := range results {
+		if i < len(xValues) { 
+			fmt.Printf("x = %.4f, Y = %.4f\n", xValues[i], y)
+		} else {
+			fmt.Printf("Y = %.4f\n", y) 
+		}
 	}
 }
