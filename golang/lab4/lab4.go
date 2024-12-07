@@ -21,7 +21,6 @@ func RunLab4() {
 func taskA(Xn float64, Xk float64, deltaX float64) []float64 {
 	var results []float64
 
-	fmt.Println("Значения Y для диапазона:")
 	for x := Xn; x <= Xk; x += deltaX {
 		y := calculateY(x)
 		if !math.IsNaN(y) {
