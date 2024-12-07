@@ -25,7 +25,6 @@ func taskA(Xn float64, Xk float64, deltaX float64) []float64 {
 		y := calculateY(x)
 		if !math.IsNaN(y) {
 			results = append(results, y)
-			fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 		}
 	}
 	return results
