@@ -53,7 +53,7 @@ func calculateY(x float64) float64 {
 
 func printResults(header string, results []float64) {
 	fmt.Println(header)
-	for i, y := range results {
+	for y := range results {
 		fmt.Printf("Y = %.4f\n", y)
 	}
 }
