@@ -47,7 +47,7 @@ func RunLab8A() {
 	deltaX := 0.05 
 	taskAA(a, b, deltaX) 
 	resultsB := taskBA(xValues) 
-	printResults("Значения Y для дополнительных значений:", resultsB) 
+	printResultsA("Значения Y для дополнительных значений:", resultsB) 
 }
 
 func taskAA(Xn float64, Xk float64, deltaX float64) {
