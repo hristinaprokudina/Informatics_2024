@@ -81,7 +81,7 @@ func calculateYA(x float64) float64 {
 	return (sinCubed + cosCubed) * math.Log(x)
 }
 
-func printResults(header string, results []float64) {
+func printResultsA(header string, results []float64) {
 	fmt.Println(header)
 	for i, y := range results {
 		fmt.Printf("x = %.2f, Y = %.4f\n", 0.2+float64(i)*0.1, y)
