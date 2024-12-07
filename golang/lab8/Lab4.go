@@ -1,4 +1,4 @@
-package lab8
+package Lab8
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-func Runlab8() {
+func RunLab8() {
 	file, err := os.Open("input.txt")
 	if err != nil {
 		fmt.Println("Ошибка при открытии файла:", err)
