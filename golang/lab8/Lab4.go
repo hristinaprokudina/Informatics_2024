@@ -64,7 +64,7 @@ func taskB(values []float64) []float64 {
 	return results
 }
 
-func calculateY(x float64) float64 {
+func calculateYA(x float64) float64 {
 	if x <= 0 {
 		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
 		return math.NaN()
