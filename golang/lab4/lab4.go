@@ -9,7 +9,7 @@ func RunLab4() {
 	Xn := 0.11
 	Xk := 0.36
 	deltaX := 0.05
-	resultsA := taskA(0.11,0.36, 0.05)
+	resultsA := taskA(Xn,Xk, deltaX)
 	printResults("Значения Y для диапазона:", resultsA)
 	extraValues := []float64{0.2, 0.3, 0.38, 0.43, 0.57}
 	resultsB := taskB(extraValues)
