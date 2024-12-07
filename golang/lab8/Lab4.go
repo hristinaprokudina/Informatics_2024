@@ -53,7 +53,7 @@ func RunLab8A() {
 func taskAA(Xn float64, Xk float64, deltaX float64) {
 	fmt.Println("Значения Y для диапазона:")
 	for x := Xn; x <= Xk; x += deltaX {
-		y := calculateY(x)
+		y := calculateYA(x)
 		if !math.IsNaN(y) {
 			fmt.Printf("x = %.2f, Y = %.4f\n", x, y)
 		}
@@ -63,7 +63,7 @@ func taskAA(Xn float64, Xk float64, deltaX float64) {
 func taskBA(values []float64) []float64 {
 	var results []float64
 	for _, x := range values {
-		y := calculateY(x)
+		y := calculateYA(x)
 		if !math.IsNaN(y) {
 			results = append(results, y)
 		}
