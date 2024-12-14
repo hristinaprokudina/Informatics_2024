@@ -9,14 +9,14 @@ import (
 )
 
 func RunLab8A() {
-	Xn, Xk, deltaX := readInputFile("input.txt")
+	Xn, Xk, deltaX := readInputFileA("input.txt")
 
-	resultsA, xValuesA := taskA(Xn, Xk, deltaX)
-	printResults("Значения Y для диапазона:", xValuesA, resultsA)
+	resultsA, xValuesA := taskAA(Xn, Xk, deltaX)
+	printResultsA("Значения Y для диапазона:", xValuesA, resultsA)
 
-	extraValues := readExtraValues("input.txt")
-	resultsB := taskB(extraValues)
-	printResults("Значения Y для дополнительных значений:", extraValues, resultsB)
+	extraValues := readExtraValuesA("input.txt")
+	resultsB := taskBA(extraValues)
+	printResultsA("Значения Y для дополнительных значений:", extraValues, resultsB)
 }
 
 func readInputFileA(filename string) (float64, float64, float64) {
