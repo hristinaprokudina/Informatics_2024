@@ -63,7 +63,7 @@ func readExtraValues(filename string) []float64 {
 
 	for scanner.Scan() {
 		lineCount++
-		if lineCount > 3 { // Пропускаем первые три значения (a, b, deltaX)
+		if lineCount > 3 {
 			value, err := strconv.ParseFloat(scanner.Text(), 64)
 			if err == nil {
 				extraValues = append(extraValues, value)
