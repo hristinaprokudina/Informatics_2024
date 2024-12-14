@@ -78,7 +78,7 @@ func readExtraValuesA(filename string) []float64 {
 	return extraValues
 }
 
-func taskA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
+func taskAA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
 	var results []float64
 	var xValues []float64
 
@@ -92,7 +92,7 @@ func taskA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
 	return results, xValues
 }
 
-func taskB(values []float64) []float64 {
+func taskBA(values []float64) []float64 {
 	var results []float64
 	for _, x := range values {
 		y := calculateY(x)
