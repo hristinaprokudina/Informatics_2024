@@ -19,7 +19,7 @@ func RunLab8A() {
 	printResults("Значения Y для дополнительных значений:", extraValues, resultsB)
 }
 
-func readInputFile(filename string) (float64, float64, float64) {
+func readInputFileA(filename string) (float64, float64, float64) {
 	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("Ошибка при открытии файла: %v\n", err)
@@ -49,7 +49,7 @@ func readInputFile(filename string) (float64, float64, float64) {
 	return values[0], values[1], values[2]
 }
 
-func readExtraValues(filename string) []float64 {
+func readExtraValuesA(filename string) []float64 {
 	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Printf("Ошибка при открытии файла: %v\n", err)
@@ -103,7 +103,7 @@ func taskB(values []float64) []float64 {
 	return results
 }
 
-func calculateY(x float64) float64 {
+func calculateYA(x float64) float64 {
 	if x <= 0 {
 		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
 		return math.NaN()
@@ -113,7 +113,7 @@ func calculateY(x float64) float64 {
 	return (sinCubed + cosCubed) * math.Log(x)
 }
 
-func printResults(header string, xValues []float64, results []float64) {
+func printResultsA(header string, xValues []float64, results []float64) {
 	fmt.Println(header)
 	for i, y := range results {
 		if i < len(xValues) {
