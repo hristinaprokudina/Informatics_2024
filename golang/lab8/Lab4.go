@@ -83,7 +83,7 @@ func taskAA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
 	var xValues []float64
 
 	for x := Xn; x <= Xk; x += deltaX {
-		y := calculateY(x)
+		y := calculateYA(x)
 		if !math.IsNaN(y) {
 			results = append(results, y)
 			xValues = append(xValues, x)
@@ -95,7 +95,7 @@ func taskAA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
 func taskBA(values []float64) []float64 {
 	var results []float64
 	for _, x := range values {
-		y := calculateY(x)
+		y := calculateYA(x)
 		if !math.IsNaN(y) {
 			results = append(results, y)
 		}
