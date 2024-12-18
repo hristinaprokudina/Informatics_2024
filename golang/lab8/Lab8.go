@@ -140,7 +140,7 @@ func createFile(filename string) {
 	fmt.Printf("Файл %s успешно создан.\n", filename)
 }
 
-func writeToFile(filename string) {
+func writeToFile(filename string, data string) {
 	file, err := os.OpenFile(filename, os.O_APPEND|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Printf("Ошибка при открытии файла для записи: %v\n", err)
@@ -148,17 +148,8 @@ func writeToFile(filename string) {
 	}
 	defer file.Close()
 
-	fmt.Println("Введите данные для записи в файл (введите 'exit' для завершения):")
-	scanner := bufio.NewScanner(os.Stdin)
-	for {
-		scanner.Scan()
-		input := scanner.Text()
-		if strings.ToLower(input) == "exit" {
-			break
-		}
-		if _, err := file.WriteString(input + "\n"); err != nil {
-			fmt.Printf("Ошибка при записи в файл: %v\n", err)
-		}
+	if _, err := file.WriteString(data + "\n"); err != nil {
+		fmt.Printf("Ошибка при записи в файл: %v\n", err)
 	}
 }
 
@@ -179,7 +170,6 @@ func readFromFile(filename string) {
 		fmt.Printf("Ошибка при чтении файла: %v\n", err)
 	}
 }
-
 func searchInFile(filename string) {
 	file, err := os.Open(filename)
 	if err != nil {
