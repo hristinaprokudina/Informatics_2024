@@ -18,9 +18,10 @@ func RunLab8() {
 	extraValues := readExtraValues("input.txt")
 	resultsB := taskB(extraValues)
 	printResults("Значения Y для дополнительных значений:", extraValues, resultsB)
+
 	fileName := "output.txt"
 	createFile(fileName)
-	writeToFile(fileName)
+	writeToFile(fileName, "Пример записи данных в файл")
 	readFromFile(fileName)
 	searchInFile(fileName)
 }
@@ -170,6 +171,7 @@ func readFromFile(filename string) {
 		fmt.Printf("Ошибка при чтении файла: %v\n", err)
 	}
 }
+
 func searchInFile(filename string) {
 	file, err := os.Open(filename)
 	if err != nil {
