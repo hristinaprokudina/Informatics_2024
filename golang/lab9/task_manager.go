@@ -1,4 +1,5 @@
 package lab9
+
 import (
 	"encoding/json"
 	"fmt"
@@ -20,15 +21,15 @@ type TaskManagerInterface interface {
 	LoadFromFile(filename string)
 }
 func (tm *TaskManager) AddTask(description string) {
-	tm.Tasks = append(tm.Tasks, Task{Description: description, Completed: false})
+	tm.TasksA = append(tm.Tasks, Task{Description: description, Completed: false})
 }
 
 func (tm *TaskManager) ShowTasks() {
-	if len(tm.Tasks) == 0 {
+	if len(tm.TasksA) == 0 {
 		fmt.Println("Нет задач для отображения.")
 		return
 	}
-	for i, task := range tm.Tasks {
+	for i, taskA := range tm.Tasks {
 		status := "Не выполнена"
 		if task.Completed {
 			status = "Выполнена"
