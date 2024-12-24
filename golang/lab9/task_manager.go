@@ -21,15 +21,15 @@ type TaskManagerInterface interface {
 	LoadFromFile(filename string)
 }
 func (tm *TaskManager) AddTask(description string) {
-	tm.TasksA = append(tm.Tasks, Task{Description: description, Completed: false})
+	tm.Tasks = append(tm.Tasks, Task{Description: description, Completed: false})
 }
 
 func (tm *TaskManager) ShowTasks() {
-	if len(tm.TasksA) == 0 {
+	if len(tm.Tasks) == 0 {
 		fmt.Println("Нет задач для отображения.")
 		return
 	}
-	for i, taskA := range tm.Tasks {
+	for i, task := range tm.Tasks {
 		status := "Не выполнена"
 		if task.Completed {
 			status = "Выполнена"
