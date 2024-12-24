@@ -1,4 +1,3 @@
-<<<<<<< HEAD:golang/lab9/utils.go
 package lab9
 
 import (
@@ -134,4 +133,3 @@ func RunLab9() {
 		}
 	}
 }
->>>>>>> 36b7497c851a67dcc78dfcc665b81c4ffe622e9d:utils.go
