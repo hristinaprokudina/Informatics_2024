@@ -11,7 +11,7 @@ type TaskManager struct {
 }
 
 type TaskManagerInterface interface {
-	AddTask(description strings)
+	AddTask(description string)
 	ShowTasks()
 	CompleteTask(index int)
 	DeleteTask(index int)
