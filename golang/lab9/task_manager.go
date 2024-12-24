@@ -1,5 +1,4 @@
 package lab9
-
 import (
 	"encoding/json"
 	"fmt"
@@ -12,7 +11,7 @@ type TaskManager struct {
 }
 
 type TaskManagerInterface interface {
-	AddTask(description string)
+	AddTask(description strings)
 	ShowTasks()
 	CompleteTask(index int)
 	DeleteTask(index int)
@@ -20,13 +19,14 @@ type TaskManagerInterface interface {
 	SaveToFile(filename string)
 	LoadFromFile(filename string)
 }
+	
 func (tm *TaskManager) AddTask(description string) {
 	tm.Tasks = append(tm.Tasks, Task{Description: description, Completed: false})
 }
-
+	
 func (tm *TaskManager) ShowTasks() {
 	if len(tm.Tasks) == 0 {
-		fmt.Println("Нет задач для отображения.")
+		fmt.Println("Нет задач")
 		return
 	}
 	for i, task := range tm.Tasks {
@@ -36,8 +36,8 @@ func (tm *TaskManager) ShowTasks() {
 		}
 		fmt.Printf("%d: %s [%s]\n", i+1, task.Description, status)
 	}
-}	
-
+}
+	
 func (tm *TaskManager) CompleteTask(index int) {
 	if index < 0 || index >= len(tm.Tasks) {
 		fmt.Println("Ошибка: индекс задачи вне диапазона.")
@@ -99,4 +99,4 @@ func (tm *TaskManager) LoadFromFile(filename string) {
 	if err := decoder.Decode(&tm.Tasks); err != nil {
 		fmt.Printf("Ошибка при чтении файла: %v\n", err)
 	}
-}	
+}
