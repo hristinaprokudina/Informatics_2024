@@ -21,11 +21,11 @@ type TaskManagerInterface interface {
 }
 	
 func (tm *TaskManager) AddTask(description string) {
-	tm.Tasks = append(tm.Tasks, Task{Description: description, Completed: false})
+	tm.Task = append(tm.Tasks, Task{Description: description, Completed: false})
 }
 	
 func (tm *TaskManager) ShowTasks() {
-	if len(tm.Tasks) == 0 {
+	if len(tm.Task) == 0 {
 		fmt.Println("Нет задач")
 		return
 	}
