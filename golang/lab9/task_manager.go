@@ -19,14 +19,13 @@ type TaskManagerInterface interface {
 	SaveToFile(filename string)
 	LoadFromFile(filename string)
 }
-	
 func (tm *TaskManager) AddTask(description string) {
-	tm.Task = append(tm.Tasks, Task{Description: description, Completed: false})
+	tm.Tasks = append(tm.Tasks, Task{Description: description, Completed: false})
 }
-	
+
 func (tm *TaskManager) ShowTasks() {
-	if len(tm.Task) == 0 {
-		fmt.Println("Нет задач")
+	if len(tm.Tasks) == 0 {
+		fmt.Println("Нет задач для отображения.")
 		return
 	}
 	for i, task := range tm.Tasks {
@@ -36,8 +35,8 @@ func (tm *TaskManager) ShowTasks() {
 		}
 		fmt.Printf("%d: %s [%s]\n", i+1, task.Description, status)
 	}
-}
-	
+}	
+
 func (tm *TaskManager) CompleteTask(index int) {
 	if index < 0 || index >= len(tm.Tasks) {
 		fmt.Println("Ошибка: индекс задачи вне диапазона.")
