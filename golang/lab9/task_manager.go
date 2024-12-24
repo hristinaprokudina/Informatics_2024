@@ -1,4 +1,5 @@
 package lab9
+
 import (
 	"encoding/json"
 	"fmt"
@@ -7,11 +8,11 @@ import (
 )
 
 type TaskManager struct {
-	Taskc []Task
+	Tasks []Task
 }
 
 type TaskManagerInterface interface {
-	AddTask(description strings)
+	AddTask(description string)
 	ShowTasks()
 	CompleteTask(index int)
 	DeleteTask(index int)
@@ -19,14 +20,14 @@ type TaskManagerInterface interface {
 	SaveToFile(filename string)
 	LoadFromFile(filename string)
 }
-	
+
 func (tm *TaskManager) AddTask(description string) {
 	tm.Tasks = append(tm.Tasks, Task{Description: description, Completed: false})
 }
-	
+
 func (tm *TaskManager) ShowTasks() {
 	if len(tm.Tasks) == 0 {
-		fmt.Println("Нет задач")
+		fmt.Println("Нет задач для отображения.")
 		return
 	}
 	for i, task := range tm.Tasks {
@@ -37,7 +38,7 @@ func (tm *TaskManager) ShowTasks() {
 		fmt.Printf("%d: %s [%s]\n", i+1, task.Description, status)
 	}
 }
-	
+
 func (tm *TaskManager) CompleteTask(index int) {
 	if index < 0 || index >= len(tm.Tasks) {
 		fmt.Println("Ошибка: индекс задачи вне диапазона.")
@@ -45,7 +46,7 @@ func (tm *TaskManager) CompleteTask(index int) {
 	}
 	tm.Tasks[index].Completed = true
 }
-	
+
 func (tm *TaskManager) DeleteTask(index int) {
 	if index < 0 || index >= len(tm.Tasks) {
 		fmt.Println("Ошибка: индекс задачи вне диапазона.")
@@ -53,7 +54,7 @@ func (tm *TaskManager) DeleteTask(index int) {
 	}
 	tm.Tasks = append(tm.Tasks[:index], tm.Tasks[index+1:]...)
 }
-	
+
 func (tm *TaskManager) SearchTask(keyword string) {
 	found := false
 	for _, task := range tm.Tasks {
@@ -70,7 +71,7 @@ func (tm *TaskManager) SearchTask(keyword string) {
 		fmt.Println("Задачи с таким ключевым словом не найдены.")
 	}
 }
-	
+
 func (tm *TaskManager) SaveToFile(filename string) {
 	file, err := os.Create(filename)
 	if err != nil {
@@ -78,13 +79,13 @@ func (tm *TaskManager) SaveToFile(filename string) {
 		return
 	}
 	defer file.Close()
-	
+
 	encoder := json.NewEncoder(file)
 	if err := encoder.Encode(tm.Tasks); err != nil {
 		fmt.Printf("Ошибка при записи в файл: %v\n", err)
 	}
 }
-	
+
 func (tm *TaskManager) LoadFromFile(filename string) {
 	file, err := os.Open(filename)
 	if err != nil {
@@ -95,6 +96,7 @@ func (tm *TaskManager) LoadFromFile(filename string) {
 		return
 	}
 	defer file.Close()
+
 	decoder := json.NewDecoder(file)
 	if err := decoder.Decode(&tm.Tasks); err != nil {
 		fmt.Printf("Ошибка при чтении файла: %v\n", err)
