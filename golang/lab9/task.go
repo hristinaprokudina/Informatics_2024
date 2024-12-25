@@ -1,4 +1,4 @@
-package lab9
+package Lab9
 
 type Task struct {
 	Description string `json:"description"`
