@@ -1,4 +1,4 @@
-package lab9
+package Lab9
 
 import (
 	"encoding/json"
