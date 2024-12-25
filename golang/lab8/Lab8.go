@@ -85,31 +85,6 @@ func readExtraValues(filename string) []float64 {
 	return extraValues
 }
 
-func taskA(Xn float64, Xk float64, deltaX float64) ([]float64, []float64) {
-	var results []float64
-	var xValues []float64
-
-	for x := Xn; x <= Xk; x += deltaX {
-		y := calculateY(x)
-		if !math.IsNaN(y) {
-			results = append(results, y)
-			xValues = append(xValues, x)
-		}
-	}
-	return results, xValues
-}
-
-func taskB(values []float64) []float64 {
-	var results []float64
-	for _, x := range values {
-		y := calculateY(x)
-		if !math.IsNaN(y) {
-			results = append(results, y)
-		}
-	}
-	return results
-}
-
 func calculateY(x float64) float64 {
 	if x <= 0 {
 		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
