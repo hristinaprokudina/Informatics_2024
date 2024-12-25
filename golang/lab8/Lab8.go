@@ -85,27 +85,6 @@ func readExtraValues(filename string) []float64 {
 	return extraValues
 }
 
-func calculateY(x float64) float64 {
-	if x <= 0 {
-		fmt.Printf("Ошибка: логарифм не определен для x = %f\n", x)
-		return math.NaN()
-	}
-	sinCubed := math.Pow(math.Sin(x), 3)
-	cosCubed := math.Pow(math.Cos(x), 3)
-	return (sinCubed + cosCubed) * math.Log(x)
-}
-
-func printResults(header string, xValues []float64, results []float64) {
-	fmt.Println(header)
-	for i, y := range results {
-		if i < len(xValues) {
-			fmt.Printf("x = %.4f, Y = %.4f\n", xValues[i], y)
-		} else {
-			fmt.Printf("Y = %.4f\n", y)
-		}
-	}
-}
-
 func createFile(filename string) {
 	file, err := os.Create(filename)
 	if err != nil {
